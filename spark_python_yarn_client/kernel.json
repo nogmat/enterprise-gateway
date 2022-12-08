@@ -1,0 +1,34 @@
+{
+  "language": "python",
+  "display_name": "Spark - Python (YARN Client Mode)",
+  "metadata": {
+    "process_proxy": {
+      "class_name": "enterprise_gateway.services.processproxies.distributed.DistributedProcessProxy"
+    },
+    "debugger": true
+  },
+  "env": {
+    "SPARK_HOME": "/opt/spark",
+    "PYSPARK_DRIVER_PYTHON": "/opt/conda/bin/python3",
+    "PYSPARK_PYTHON": "/usr/local/bin/python3",
+    "PYTHONPATH": "${HOME}/.local/lib/python3.7/site-packages:/opt/spark/python:/opt/spark/python/lib/py4j-0.10.7-src.zip",
+    "SPARK_OPTS": "--master yarn --deploy-mode client --name ${KERNEL_ID:-ERROR__NO__KERNEL_ID} ${KERNEL_EXTRA_SPARK_OPTS}",
+    "SPARK_DIST_CLASSPATH": "/usr/hdp/current/etc/hadoop:/usr/hdp/current/share/hadoop/common/lib/*:/usr/hdp/current/share/hadoop/common/*:/usr/hdp/current/share/hadoop/hdfs:/usr/hdp/current/share/hadoop/hdfs/lib/*:/usr/hdp/current/share/hadoop/hdfs/*:/usr/hdp/current/share/hadoop/yarn/lib/*:/usr/hdp/current/share/hadoop/yarn/*:/usr/hdp/current/share/hadoop/mapreduce/lib/*:/usr/hdp/current/share/hadoop/mapreduce/*:/usr/hdp/current/contrib/capacity-scheduler/*.jar",
+    "LAUNCH_OPTS": "",
+    "HADOOP_CONF_DIR": "/usr/hdp/current/etc/hadoop",
+    "HADOOP_HOME": "/usr/hdp/current"
+  },
+  "argv": [
+    "/usr/local/share/jupyter/kernels/spark_python_yarn_client/bin/run.sh",
+    "--RemoteProcessProxy.kernel-id",
+    "{kernel_id}",
+    "--RemoteProcessProxy.response-address",
+    "{response_address}",
+    "--RemoteProcessProxy.public-key",
+    "{public_key}",
+    "--RemoteProcessProxy.port-range",
+    "{port_range}",
+    "--RemoteProcessProxy.spark-context-initialization-mode",
+    "lazy"
+  ]
+}
